@@ -1,14 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Random r = new Random();
+var r = new Random();
 var mas = Enumerable.Repeat(0, 20).Select(x => r.Next(1, 150)).ToArray();
 Console.WriteLine("входной массив");
 Console.WriteLine(string.Join(" ", mas.Select(x => x.ToString()).ToArray()));
 
-var v = mas.OrderBy(s => SumDigit(s));
+var sortMas = mas.OrderBy(s => SumDigit(s));
 
 Console.WriteLine("отсортированный массив по сумме цифр");
-Console.WriteLine(string.Join(" ", v.Select(x => x.ToString()).ToArray()));
+Console.WriteLine(string.Join(" ", sortMas.Select(x => x.ToString()).ToArray()));
 
 int SumDigit(int dig)
 {
